@@ -5,6 +5,7 @@ import Stats from './components/Stats';
 import ThreatFeed from './components/ThreatFeed';
 import { ThreatVolumeChart, ThreatDistributionChart } from './components/Charts';
 import CoPilot from './components/CoPilot';
+import ThreatMap from './components/ThreatMap';
 
 function App() {
   const [activeView, setActiveView] = useState('overview');
@@ -45,14 +46,7 @@ function App() {
             </div>
           )}
 
-          {activeView === 'threatmap' && (
-            <div className="flex items-center justify-center h-[600px] bg-[#020617]/50 border border-blue-500/20 rounded-lg backdrop-blur-sm">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-2">Threat Map</h3>
-                <p className="text-gray-400">Geographic visualization coming soon</p>
-              </div>
-            </div>
-          )}
+          {activeView === 'threatmap' && <ThreatMap />}
 
           {activeView === 'settings' && (
             <div className="bg-[#020617]/50 border border-blue-500/20 rounded-lg p-8 backdrop-blur-sm">
